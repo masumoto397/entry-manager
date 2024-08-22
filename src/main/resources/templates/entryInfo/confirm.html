@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+  <head th:insert="header::head()"></head>
+  <body>
+    <span th:inline="text">
+      入室日： [[${entryInfoForm.entryDate}]]<br>
+    </span>
+  </body>
+</html>

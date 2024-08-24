@@ -16,7 +16,7 @@ create table entry_info (
     status varchar(1),
     conform_user1 varchar(5),
     conform_user2 varchar(5),
-    conform_user3 varchar(5)
+    conform_user3 varchar(5),
     primary key (entry_id,req_date)
 );
 

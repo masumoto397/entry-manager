@@ -5,5 +5,61 @@
     <span th:inline="text">
       入室日： [[${entryInfoForm.entryDate}]]<br>
     </span>
+    <span th:inline="text">
+      開始時刻： [[${entryInfoForm.entryTimeS}]]<br>
+    </span>
+    <span th:inline="text">
+      終了時刻： [[${entryInfoForm.entryTimeE}]]<br>
+    </span>
+    <span th:inline="text">
+      申請者： [[${entryInfoForm.reqUser}]]<br>
+    </span>
+    <span th:inline="text">
+      申請グループ： [[${entryInfoForm.reqGroup}]]<br>
+    </span>
+    <span th:inline="text">
+      入室者１： [[${entryInfoForm.entryUser1}]]<br>
+    </span>
+    <span th:inline="text">
+      入室者２： [[${entryInfoForm.entryUser2}]]<br>
+    </span>
+    <span th:inline="text">
+      入室者３： [[${entryInfoForm.entryUser3}]]<br>
+    </span>
+    <span th:inline="text">
+      入室者４： [[${entryInfoForm.entryUser4}]]<br>
+    </span>
+    <span th:inline="text">
+      入室者５： [[${entryInfoForm.entryUser5}]]<br>
+    </span>
+    <span th:inline="text">
+      申請事： [[${entryInfoForm.reqReason}]]<br>
+    </span>
+    <span th:inline="text">
+      備考： [[${entryInfoForm.remark}]]<br>
+    </span>
+
+    <button id="registerButton" type="button">登録</button>
+
+    <!-- 登録成功メッセージ -->
+    <div id="successMessage" style="color: green; display: none;"></div>
+
+    <script>
+    $(document).ready(function() {
+      $('#registerButton').click(function() {
+        $.ajax({
+          url: '/entryInfo/register',
+          type: 'POST',
+          success: function(response) {
+            $('#registerButton').text('登録済み').prop('disabled', true);
+            $('#successMessage').text('登録されました').show();
+          },
+          error: function() {
+            alert('登録に失敗しました。もう一度お試しください。');
+          }
+        });
+      });
+    });
+    </script>
   </body>
 </html>

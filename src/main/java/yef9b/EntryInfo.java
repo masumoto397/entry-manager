@@ -1,6 +1,7 @@
 package yef9b;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Column;
@@ -15,6 +16,7 @@ import lombok.Data;
 public class EntryInfo {
 
     @Id
+    @GeneratedValue
     @Column(name = "entry_id")
     private Integer entryId;
 

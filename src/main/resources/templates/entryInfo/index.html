@@ -3,95 +3,126 @@
 
 <head th:insert="header::head()"></head>
 
-<body class="roboto-regular">
-  <div class="mx-3">
-    <form th:action="@{/entryInfo/confirm}" th:object="${entryInfoForm}" method="post">
-      <div class="row mb-3">
-        <label class="form-label col-form-label col-sm-3" for="entryDate">入室日</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" th:field="*{entryDate}" />
-        </div>
-      </div>
+<body>
+  <div class="card w-75 mx-auto">
+    <div class="card-header text-white bg-primary text-center fw-bold">入室申請管理ー入力</div>
+    <div class="card-body">
+      <form th:action="@{/entryInfo/confirm}" th:object="${entryInfoForm}" method="post">
+        <table class="table table-borderless" >
+          <tbody>
+            <tr class="row">
+              <th class="col-sm-3 align-middle">
+                <label class="form-label col-form-label" for="entryDate">入室日</label>
+              </th>
+              <td class="col-sm-9 align-middle">
+                <input type="text" class="form-control" th:field="*{entryDate}" />
+              </td>
+            </tr>
 
-      <div class="row mb-3">
-        <label class="form-label col-form-label col-sm-3" for="entryTimeS">開始時刻</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" th:field="*{entryTimeS}" />
-        </div>
-      </div>
+            <tr class="row">
+              <th class="col-sm-3 align-middle">
+                <label class="form-label col-form-label" for="entryTimeS">開始時刻</label>
+              </th>
+              <td class="col-sm-9 align-middle">
+                <input type="text" class="form-control" th:field="*{entryTimeS}" />
+              </td>
+            </tr>
 
-      <div class="row mb-3">
-        <label class="form-label col-form-label col-sm-3" for="entryTimeE">終了時刻</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" th:field="*{entryTimeE}" />
-        </div>
-      </div>
+            <tr class="row">
+              <th class="col-sm-3 align-middle">
+                <label class="form-label col-form-label" for="entryTimeE">終了時刻</label>
+              </th>
+              <td class="col-sm-9 align-middle">
+                <input type="text" class="form-control" th:field="*{entryTimeE}" />
+              </td>
+            </tr>
 
-      <div class="row mb-3">
-        <label class="form-label col-form-label col-sm-3" for="reqUser">申請者</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" th:field="*{reqUser}" />
-        </div>
-      </div>
+            <tr class="row">
+              <th class="col-sm-3 align-middle">
+                <label class="form-label col-form-label" for="reqUser">申請者</label>
+              </th>
+              <td class="col-sm-9 align-middle">
+                <input type="text" class="form-control" th:field="*{reqUser}" />
+              </td>
+            </tr>
 
-      <div class="row mb-3">
-        <label class="form-label col-form-label col-sm-3" for="reqGroup">申請グループ</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" th:field="*{reqGroup}" />
-        </div>
-      </div>
+            <tr class="row">
+              <th class="col-sm-3 align-middle">
+                <label class="form-label col-form-label" for="reqGroup">申請グループ</label>
+              </th>
+              <td class="col-sm-9 align-middle">
+                <input type="text" class="form-control" th:field="*{reqGroup}" />
+              </td>
+            </tr>
 
-      <div class="row mb-3">
-        <label class="form-label col-form-label col-sm-3" for="entryUser1">入室者１</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" th:field="*{entryUser1}" />
-        </div>
-      </div>
+            <tr class="row">
+              <th class="col-sm-3 align-middle">
+                <label class="form-label col-form-label" for="entryUser1">入室者１</label>
+              </th>
+              <td class="col-sm-9 align-middle">
+                <input type="text" class="form-control" th:field="*{entryUser1}" />
+              </td>
+            </tr>
 
-      <div class="row mb-3">
-        <label class="form-label col-form-label col-sm-3" for="entryUser2">入室者２</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" th:field="*{entryUser2}" />
-        </div>
-      </div>
+            <tr class="row">
+              <th class="col-sm-3 align-middle">
+                <label class="form-label col-form-label" for="entryUser2">入室者２</label>
+              </th>
+              <td class="col-sm-9 align-middle">
+                <input type="text" class="form-control" th:field="*{entryUser2}" />
+              </td>
+            </tr>
 
-      <div class="row mb-3">
-        <label class="form-label col-form-label col-sm-3" for="entryUser3">入室者３</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" th:field="*{entryUser3}" />
-        </div>
-      </div>
+            <tr class="row">
+              <th class="col-sm-3 align-middle">
+                <label class="form-label col-form-label" for="entryUser3">入室者３</label>
+              </th>
+              <td class="col-sm-9 align-middle">
+                <input type="text" class="form-control" th:field="*{entryUser3}" />
+              </td>
+            </tr>
 
-      <div class="row mb-3">
-        <label class="form-label col-form-label col-sm-3" for="entryUser4">入室者４</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" th:field="*{entryUser4}" />
-        </div>
-      </div>
+            <tr class="row">
+              <th class="col-sm-3 align-middle">
+                <label class="form-label col-form-label" for="entryUser4">入室者４</label>
+              </th>
+              <td class="col-sm-9 align-middle">
+                <input type="text" class="form-control" th:field="*{entryUser4}" />
+              </td>
+            </tr>
 
-      <div class="row mb-3">
-        <label class="form-label col-form-label col-sm-3" for="entryUser5">入室者５</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" th:field="*{entryUser5}" />
-        </div>
-      </div>
+            <tr class="row">
+              <th class="col-sm-3 align-middle">
+                <label class="form-label col-form-label" for="entryUser5">入室者５</label>
+              </th>
+              <td class="col-sm-9 align-middle">
+                <input type="text" class="form-control" th:field="*{entryUser5}" />
+              </td>
+            </tr>
 
-      <div class="row mb-3">
-        <label class="form-label col-form-label col-sm-3" for="reqReason">申請事由</label>
-        <div class="col-sm-9">
-          <textarea rows="3" class="form-control" th:field="*{reqReason}" />
-        </div>
-      </div>
+            <tr class="row">
+              <th class="col-sm-3 align-middle">
+                <label class="form-label col-form-label" for="reqReason">申請事由</label>
+              </th>
+              <td class="col-sm-9 align-middle">
+                <textarea rows="3" class="form-control" th:field="*{reqReason}" />
+              </td>
+            </tr>
 
-      <div class="row mb-3">
-        <label class="form-label col-form-label col-sm-3" for="remark">備考</label>
-        <div class="col-sm-9">
-          <textarea rows="3" class="form-control" th:field="*{remark}" />
-        </div>
-      </div>
+            <tr class="row">
+              <th class="col-sm-3 align-middle">
+                <label class="form-label col-form-label" for="remark">備考</label>
+              </th>
+              <td class="col-sm-9 align-middle">
+                <textarea rows="3" class="form-control" th:field="*{remark}" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-      <button type="submit" class="btn btn-primary">送信</button>
-    </form>
+        <button type="submit" class="btn btn-primary">送信</button>
+      </form>
+    </div>
   </div>
 </body>
 

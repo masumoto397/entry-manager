@@ -1,5 +1,8 @@
 package yef9b;
 
+import java.util.Date;
+
+import org.apache.commons.lang3.time.DateFormatUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -7,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
@@ -40,8 +42,25 @@ public class EntryInfoContoroller {
     @ResponseBody
     public ResponseEntity<String> register(EntryInfoForm entryInfoForm, SessionStatus sessionStatus) {
         try {
-            // ここで登録処理を行う
-
+            EntryInfo entryInfo = new EntryInfo();
+            entryInfo.setReqDate(DateFormatUtils.format(new Date(), "yyyyMMdd"));
+            entryInfo.setEntryDate(entryInfoForm.getEntryDate());
+            entryInfo.setEntryTimeS(entryInfoForm.getEntryTimeS());
+            entryInfo.setEntryTimeE(entryInfoForm.getEntryTimeE());
+            entryInfo.setReqUser(entryInfoForm.getReqUser());
+            entryInfo.setReqGroup(entryInfoForm.getReqGroup());
+            entryInfo.setEntryUser1(entryInfoForm.getEntryUser1());
+            entryInfo.setEntryUser2(entryInfoForm.getEntryUser2());
+            entryInfo.setEntryUser3(entryInfoForm.getEntryUser3());
+            entryInfo.setEntryUser4(entryInfoForm.getEntryUser4());
+            entryInfo.setEntryUser5(entryInfoForm.getEntryUser5());
+            entryInfo.setReqReason(entryInfoForm.getReqReason());
+            entryInfo.setRemark(entryInfoForm.getRemark());
+            entryInfo.setStatus("0");
+            entryInfo.setConformUser1(null);
+            entryInfo.setConformUser2(null);
+            entryInfo.setConformUser3(null);
+            entryInfoRepository.save(entryInfo);
             // セッションをクリア
             sessionStatus.setComplete();
 
